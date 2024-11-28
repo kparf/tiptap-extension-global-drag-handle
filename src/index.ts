@@ -164,6 +164,7 @@ export function DragHandlePlugin(
       // if inline node is selected, e.g mention -> go to the parent node to select the whole node
       // if table row is selected, go to the parent node to select the whole node
       if (
+        !(selection as NodeSelection).node.type?.spec?.draggable ||
         (selection as NodeSelection).node.type.isInline ||
         (selection as NodeSelection).node.type.name === 'tableRow'
       ) {
