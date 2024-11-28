@@ -34,7 +34,8 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c"
+    "build": "npm run clean && rollup -c",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "typescript": "^5.4.3",
