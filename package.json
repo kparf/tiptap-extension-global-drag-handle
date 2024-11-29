@@ -1,5 +1,5 @@
 {
-  "name": "tiptap-extension-global-drag-handle",
+  "name": "@kparf/tiptap-extension-global-drag-handle",
   "description": "drag handle extension for tiptap",
   "version": "0.1.16",
   "author": {
