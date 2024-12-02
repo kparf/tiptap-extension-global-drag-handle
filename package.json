@@ -37,8 +37,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c",
-    "postinstall": "npm run build"
+    "build": "npm run clean && rollup -c"
   },
   "devDependencies": {
     "typescript": "^5.4.3",
