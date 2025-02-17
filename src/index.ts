@@ -78,8 +78,9 @@ function nodeDOMAtCoords(
     .elementsFromPoint(coords.x, coords.y)
     .find(
       (elem: Element) =>
-        elem.parentElement?.matches?.('.ProseMirror') ||
-        elem.matches(selectors),
+        elem.parentElement?.matches?.(
+          '.ProseMirror, [data-position="left"], [data-position="right"]',
+        ) || elem.matches(selectors),
     );
 }
 function nodePosAtDOM(
@@ -301,6 +302,7 @@ export function DragHandlePlugin(
 
           if (
             !(node instanceof Element) ||
+            node.getAttribute('data-type') === 'columns' ||
             node.matches(excludedTagList) ||
             notDragging
           ) {
