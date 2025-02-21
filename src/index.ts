@@ -9,7 +9,7 @@ import { Fragment, Slice, Node } from '@tiptap/pm/model';
 
 // @ts-ignore
 import { __serializeForClipboard, EditorView } from '@tiptap/pm/view';
-
+console.log('__serializeForClipboard', __serializeForClipboard);
 export interface GlobalDragHandleOptions {
   /**
    * The width of the drag handle
