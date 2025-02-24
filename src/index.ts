@@ -8,8 +8,8 @@ import {
 import { Fragment, Slice, Node } from '@tiptap/pm/model';
 
 // @ts-ignore
-import { __serializeForClipboard, EditorView } from '@tiptap/pm/view';
-console.log('__serializeForClipboard', __serializeForClipboard);
+import { EditorView } from '@tiptap/pm/view';
+import { serializeForClipboard } from './src/clipboard-serializer';
 export interface GlobalDragHandleOptions {
   /**
    * The width of the drag handle
@@ -184,7 +184,7 @@ export function DragHandlePlugin(
     }
 
     const slice = view.state.selection.content();
-    const { dom, text } = __serializeForClipboard(view, slice);
+    const { dom, text } = serializeForClipboard(view, slice);
 
     event.dataTransfer.clearData();
     event.dataTransfer.setData('text/html', dom.innerHTML);
